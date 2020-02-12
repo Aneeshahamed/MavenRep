@@ -2,6 +2,8 @@ package SearchDataFromExcel;
 
 import java.io.File;
 import java.io.FileInputStream;
+import java.util.ArrayList;
+
 import org.apache.poi.ss.usermodel.Row;
 import org.apache.poi.xssf.usermodel.XSSFSheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
@@ -10,7 +12,9 @@ public class SearchDataFromExcel {
 	static FileInputStream fis;
 	static XSSFWorkbook wb;
 	static XSSFSheet sh1;
+	
 	public static void main(String[] args) throws Exception {
+		
 		File src = new File("C:\\Users\\Aneesh Ahamed\\Desktop\\Test Data.xlsx");
 		FileInputStream fis = new FileInputStream(src);
 		XSSFWorkbook wb = new XSSFWorkbook(fis);
@@ -45,14 +49,16 @@ public class SearchDataFromExcel {
 	private static void Filtering_MDN(int mDN_Row, int mDN_Column) {
 		try 
 		{
-			for(int k = mDN_Row; k<=sh1.getLastRowNum() ; k++)
+			for(int k = mDN_Row; k<=sh1.getLastRowNum(); k++)
 			{
 				String MDN_Data = sh1.getRow(k).getCell(mDN_Column).getRawValue();
 				if(!MDN_Data.isEmpty())
 				{
-					System.out.println(MDN_Data);
+					String[] array_mdn = new String[40];
+					array_mdn[k] = MDN_Data;
+					System.out.println(array_mdn[k]);
 				}
-			}
+			}	
 		}
 		catch(Exception ex)
 		{
