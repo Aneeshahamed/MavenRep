@@ -1,11 +1,7 @@
 package Https_ReqResponse_Msg;
-
 import java.net.URL;
-
 import javax.net.ssl.HttpsURLConnection;
-
 public class Https_ReqResponse_Msg {
-
 	public static void main(String[] args) throws Exception {
 		String Request="https://www.google.com/";
 		Https_URL(Request);
