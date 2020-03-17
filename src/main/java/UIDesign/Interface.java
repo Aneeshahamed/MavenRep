@@ -27,10 +27,6 @@ public class Interface {
 	static XSSFWorkbook wb;
 	static XSSFSheet sh1;
 	public static void main(String[] args) {
-		Window();		
-		Design_Actions();
-	}
-	private static void Design_Actions() {
 		JLabel L_Upload,L_SaveTo,L_Sheet,L_Username,L_Password;
 		L_Upload = new JLabel("Upload File");  
 		L_Upload.setBounds(50,50, 100,30);
@@ -170,8 +166,8 @@ public class Interface {
 				}
 			}
 		});
-	}
-	private static void Window() {	
+	
+		
 		f.setVisible(true);
 		f.setSize(520,450);
 		f.setLayout(null);
